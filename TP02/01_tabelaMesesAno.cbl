@@ -53,7 +53,7 @@
            MOVE SPACES TO OPCAO-INIC.
            PERFORM RECEBE-DIA UNTIL DIA >=1 AND <= 31.
            PERFORM RECEBE-MES UNTIL MES >=1 AND <= 12.
-           PERFORM RECEBE-ANO UNTIL ANO > 1500 AND <= 2500.
+           PERFORM RECEBE-ANO UNTIL ANO > 0 AND <= 2500.
            PERFORM MOSTRA.
            PERFORM CONTINUA UNTIL OPCAO = "S" OR "N" OR "s" OR "n".
            IF OPCAO = "S" OR "s"
@@ -77,12 +77,12 @@
            DISPLAY ":                                       :" AT 1920.
            DISPLAY ":                                       :" AT 2020.
            DISPLAY ":                                       :" AT 2120.
-           DISPLAY "::::::::::::::::::::::::::::::::::::::::" AT 2120.
+           DISPLAY ":::::::::::::::::::::::::::::::::::::::::" AT 2120.
        RECEBE-DIA.
-           ACCEPT DIA AT 1247 WITH PROMPT AUTO.
+           ACCEPT DIA AT 1236 WITH PROMPT AUTO.
 
        RECEBE-MES.
-           ACCEPT MES AT 1250 WITH PROMPT AUTO.
+           ACCEPT MES AT 1239 WITH PROMPT AUTO.
            IF MES = 2 AND DIA > 29
            PERFORM RECEBE-DIA UNTIL DIA >=1 AND <=29.
            IF MES = 4 AND DIA > 30
@@ -94,7 +94,7 @@
            IF MES = 11 AND DIA > 30
            PERFORM RECEBE-DIA UNTIL DIA >=1 AND <=30.
        RECEBE-ANO.
-           ACCEPT ANO AT 1253 WITH PROMPT AUTO.
+           ACCEPT ANO AT 1242 WITH PROMPT AUTO.
 
        MOSTRA.
            DISPLAY "Data por extenso: " AT 1322.
